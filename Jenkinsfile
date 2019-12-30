@@ -15,7 +15,7 @@ pipeline {
     stage('Build image and push to docker hub') {
       steps {
         script {
-        dcoker.withRegistry('https://registry.hub.doker.com','DOCKER_ID') {
+        docker.withRegistry('https://registry.hub.doker.com','DOCKER_ID') {
           dockerImage = docker.build(DOCKER_IMAGE_NAME)
           dockerImage.push("${env.BUILD_NUMBER}")
           dockerImage.push("latest")
