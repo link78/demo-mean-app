@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout Source Code') {
       steps {
-        sh 'git clone https://github.com/link78/demo-mean-app.git'
+        sh 'npm --version'
       }
     }
 
