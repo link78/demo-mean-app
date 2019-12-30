@@ -9,7 +9,7 @@ pipeline {
 
     stage('Build Application') {
       steps {
-        sh 'npm install -g @angular/cli'
+        sh 'sudo npm install -g @angular/cli'
         sh 'npm install'
       }
     }
