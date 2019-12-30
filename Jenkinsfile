@@ -6,10 +6,14 @@ pipeline {
   }
   agent any
   stages {
-    stage('Checkout Source Code') {
+    stage('Checkout Source') {
+
       steps {
-        sh 'npm --version'
+
+        git 'https://github.com/link78/demo-mean-app.git'
+
       }
+
     }
 
     stage('Build image and push to docker hub') {
