@@ -1,4 +1,9 @@
 pipeline {
+  
+  environment {
+   dockerImage = ""
+   DOCKER_IMAGE_NAME= "burk1212/angular-app"
+  }
   agent any
   stages {
     stage('Checkout Source Code') {
@@ -9,13 +14,17 @@ pipeline {
 
     stage('Build image and push to docker hub') {
       steps {
-        echo 'Building image'
+        dcoker.withRegistry('https://registry.hub.doker.com','DOCKER_ID') {
+          dockerImage = docker.build(DOCKER_IMAGE_NAME)
+          dockerImage.push("${env.BUILD_NUMBER}")
+          dockerImage.push("latest")
+        }
       }
     }
 
     stage('Run Image on docker') {
       steps {
-        echo 'Running image'
+        sh label: '',script: 'docker run --name my-angular -d -p 9090:80 burk1212/angular-app'
       }
     }
 
