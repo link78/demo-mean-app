@@ -12,7 +12,7 @@ volumes: [
    }
    
     stage('checkout and Installing docker') {
-	 git 'https://github.com/link78/mean_app-demo.git'
+	 git 'https://github.com/link78/demo-mean-app.git'
       container('nodejs') {
 	 sh 'node --version'
          sh 'apk update && apk add docker'
