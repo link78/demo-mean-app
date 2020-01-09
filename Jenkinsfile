@@ -5,6 +5,7 @@ node {
 }
 
 	stage('Build Angular App with Gradle') {
+          sh 'gradle --daemon'
 	  sh './gradlew build'
 }
 
