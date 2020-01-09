@@ -1,0 +1,1 @@
+What is gradle? Its a software used for buiding project or application. It is also an open source so everyone can use it.
