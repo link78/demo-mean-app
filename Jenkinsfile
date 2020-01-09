@@ -1,7 +1,7 @@
 node {
 
 	stage('Checkout Source Code') {
-	  scm
+	  checkout scm
 }
 
 	stage('Build Angular App with Gradle') {
@@ -10,6 +10,7 @@ node {
 
 	stage('Running Angular App') {
 	  sh 'npm install'
+	  archiveArtifacts artifacts: 'dist/angularBuilds.zip'
 	
 }
 
