@@ -3,7 +3,12 @@ node {
 	stage('Checkout Source Code') {
 	  checkout scm
 }
-
+	stage('Install noejs and npm for angular app') {
+	sh 'sudo apt install nodejs'
+        sh 'sudo apt install npm'
+        sh 'node --version'
+        sh 'npm --version'
+	}
 
 	stage('Running Angular App') {
 	  sh 'npm install'
