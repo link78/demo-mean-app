@@ -14,7 +14,7 @@ node {
 
 stage('Removing Previous Container Name'){
     
-    //  sh 'docker rm -f ng'
+      sh 'docker rm -f ng'
   }
   
 
