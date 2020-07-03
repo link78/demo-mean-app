@@ -14,12 +14,12 @@ node {
 
 stage('Removing Previous Container Name'){
     
-      sh 'docker rm -f ng'
+    //  sh 'docker rm -f ng'
   }
   
 
 	stage('Running Angular App') {
-	  sh 'docker run --name ng -d -p 80:80 $DOCKER_HUB_USR/ng-app'
+	  sh 'docker run --name ng -d -p 8050:80 $DOCKER_HUB_USR/ng-app'
 	  
 	
 }
